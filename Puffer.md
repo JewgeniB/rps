@@ -1,8 +1,3 @@
-#rps
-Odin Project: Rock Paper Scissors
-
-
-Erste Lösung:
 function computerSelection() {
     const ran = Math.floor(Math.random() * 3);
     let result;
@@ -19,16 +14,15 @@ function computerSelection() {
     return result;
 }
 
-function playerSelection(input) {
-    const userInput = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
-
+function playerSelection() {
+    const userInput = window.prompt("Rock, Paper or Scissors?").charAt(0).toUpperCase() + input.slice(1).toLowerCase();
     console.log(userInput);
     return userInput;
 }
 
-function playRound() {
-    const comp = computerSelection();
-    const user = playerSelection(window.prompt("Rock, Paper or Scissors"));
+function playRound(playerSelection, computerSelection) {
+    const comp = computerSelection;
+    const user = playerSelection;
 
     if ((comp == 'Rock' && user == 'Scissors') || (comp == 'Paper' && user == 'Rock') || (comp == 'Scissors' && user == 'Paper') ) {
         console.log("You Lose! " + comp + " beats " + user);
